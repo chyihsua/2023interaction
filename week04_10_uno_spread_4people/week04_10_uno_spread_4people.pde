@@ -1,6 +1,6 @@
 void setup()
 {
-  size(800,800);
+  size(850,850);
   myShuffle();
 }
 
@@ -51,10 +51,10 @@ void draw()
   else drawCard(50,50,#000000,99,128);  //得到卡片
   for (int i=0;i<myCard;i++)  //呼叫drawCard顯示已經洗好的牌
   {
-    if (i%4==0)  drawCard(450      +40*i,50,cardC[i],cardN[i],128);
-    if (i%4==1)  drawCard(450-40   +40*i,350,cardC[i],cardN[i],128);
-    if (i%4==2)  drawCard(450-80   +40*i,650,cardC[i],cardN[i],128);
-    if (i%4==3)  drawCard(450-120  +40*i,350,cardC[i],cardN[i],128);
+    if (i%4==0)  drawCard(430+40*i/4,50,cardC[i],cardN[i],128);
+    if (i%4==1)  drawCard(630+40*i/4,350,cardC[i],cardN[i],128);
+    if (i%4==2)  drawCard(430+40*i/4,650,cardC[i],cardN[i],128);
+    if (i%4==3)  drawCard(230+40*i/4,350,cardC[i],cardN[i],128);
   }
 }
 
