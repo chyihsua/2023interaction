@@ -32,20 +32,12 @@ void draw()
   dy = mouseY-y;
   d = sqrt(dx * dx + dy * dy)*3;
   stroke(0);
-  drawhead(x2, y2, dir2);
   drawsnake2();
   drawbody();
   drawhead(x, y, dir);
-  
   move();
   eat(x,y,0);
   mapMove();
-  
-  //for (PVector p : pt)
-  //{
-  //  fill(255, 255, 0);
-  //  ellipse(p.x, p.y, 10, 10);
-  //}
 }
 
 //限制畫布範圍
@@ -137,27 +129,27 @@ void move() {
 void drawsnake2() {
   for(int i=0; i<body2.size(); i+=8){
     PVector b2 = body2.get(i);
-    fill(random(150,255),random(100),random(100));
+    fill(random(150,255),random(100),random(50));
     ellipse(b2.x, b2.y, 30, 30);
     line(b2.x, b2.y, b2.x-15*cos(b2.z), b2.y-15*sin(b2.z) );
   }
   
   // 改變方向
   dir2 += random(-0.2,0.2);
-  x2 += cos(dir2) * 1.8;
-  y2 += sin(dir2) *1.8;
+  x2 += cos(dir2) * 1.5;
+  y2 += sin(dir2) *1.5;
 
   if(body2.size()<snakelen2*8){
-    body2.add(0, new PVector(x2, y2, dir2) );  // 在開頭添加新的 PVector
+    body2.add(new PVector(x2, y2, dir2) ); 
   }else{
-    for(int i=body2.size()-1; i>0; i--){
-      body2.get(i).x = body2.get(i-1).x;
-      body2.get(i).y = body2.get(i-1).y;
-      body2.get(i).z = body2.get(i-1).z;
+    for(int i=0; i<body2.size()-1; i++){
+      body2.get(i).x = body2.get(i+1).x;
+      body2.get(i).y = body2.get(i+1).y;
+      body2.get(i).z = body2.get(i+1).z;
     }
-    body2.get(0).x = x2;
-    body2.get(0).y = y2;
-    body2.get(0).z = dir2;
+    body2.get(body2.size()-1).x = x2;
+    body2.get(body2.size()-1).y = y2;
+    body2.get(body2.size()-1).z = dir2;
   }
   eat(x2,y2,1);
 }
