@@ -154,7 +154,8 @@ void keyPressed(){
 - 修改程式碼讓蛇順暢移動、增長蛇身
 - PROBLEM:當蛇重疊身體時，新長出的身體會覆蓋在前面的身體上面，只有蛇頭在上面通過
     - drawbody:for迴圈i=0開始順向=>從頭到尾畫，重疊會蓋上去；從i=body.size()-1開始畫=>從尾到頭畫，重疊會在下層
-![截圖 2023-12-01 下午1.03.24](https://hackmd.io/_uploads/rJ5iFkPB6.png)
+<img width="712" alt="upload_5dbf4a98984a7a1fff2c1efe50f697da" src="https://github.com/chyihsua/2023interaction/assets/91170636/592848ac-fee5-4f22-b154-19a2c65fad45">
+
 
 ### snake_8
 ###### Edit Time : 2023.12.7、8
